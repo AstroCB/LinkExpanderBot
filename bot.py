@@ -6,6 +6,8 @@ try:
     from credentials import * # Python file containing USERNAME, PASSWORD, and USERAGENT config variables
 except:
     # If not available, probably on Heroku
+    print("Credentials file not available. Checking Heroku config variables.")
+    print("You may be seeing this message if you have not initialized a credentials.py file; see README for instructions.")
     from heroku import *
 
 LINK_PARSER = re.compile(r"\[([^\]]+)\]\(([^\)]+)\)", re.I) # Extract Markdown links
