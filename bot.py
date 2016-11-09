@@ -5,10 +5,8 @@ import time
 try:
     from credentials import * # Python file containing USERNAME, PASSWORD, and USERAGENT config variables
 except:
-    import os
-    USERNAME = os.environ["USERNAME"]
-    PASSWORD = os.environ["PASSWORD"]
-    USERAGENT = os.environ["USERAGENT"]
+    # If not available, probably on Heroku
+    from heroku import *
 
 LINK_PARSER = re.compile(r"\[([^\]]+)\]\(([^\)]+)\)", re.I) # Extract Markdown links
 POST_LENGTH = 3 # Max length of expansion
