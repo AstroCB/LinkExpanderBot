@@ -5,10 +5,7 @@ import time
 try:
     from credentials import * # Python file containing USERNAME, PASSWORD, and USERAGENT config variables
 except ImportError:
-    # If not available, probably on Heroku
-    print("Credentials file not available. Checking Heroku config variables.")
-    print("You may be seeing this message if you have not initialized a credentials.py file; see README for instructions.")
-    from heroku import *
+    print("Credentials file not available. You need to include a credentials.py file in the root directory. See README.");
 
 LINK_PARSER = re.compile(r"\[([^\]]+)\]\(([^\)]+)\)", re.I) # Extract Markdown links
 POST_LENGTH = 3 # Max length of expansion
