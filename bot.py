@@ -4,7 +4,7 @@ import time
 
 try:
     from credentials import * # Python file containing USERNAME, PASSWORD, and USERAGENT config variables
-except:
+except ImportError:
     # If not available, probably on Heroku
     print("Credentials file not available. Checking Heroku config variables.")
     print("You may be seeing this message if you have not initialized a credentials.py file; see README for instructions.")
@@ -57,4 +57,3 @@ def main():
             except Exception as other_error:
                 print(other_error)
 main()
-@app.run(host='0.0.0.0', port=port)
