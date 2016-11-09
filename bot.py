@@ -57,3 +57,4 @@ def main():
             except Exception as other_error:
                 print(other_error)
 main()
+@app.run(host='0.0.0.0', port=port)
