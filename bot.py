@@ -1,6 +1,7 @@
 import praw
 import re
 import time
+from blacklist import *
 
 try:
     from credentials import * # Python file containing USERNAME, PASSWORD, and USERAGENT config variables
@@ -9,8 +10,6 @@ except ImportError:
 
 LINK_PARSER = re.compile(r"\[([^\]]+)\]\(([^\)]+)\)", re.I) # Extract Markdown links
 POST_LENGTH = 3 # Max length of expansion
-BLACKLISTED_USERS = ["AutoModerator", "SnapshillBot", "Roboragi", "hearthscan-bot", "TwitterToStreamable", "DeltaBot", "CrootBot", "yankbot", "BitcoinAllBot", "Reply-Dota-2-Reddit", "dEnissay", "DeepIntoYouTubeStats"]
-BLACKLISTED_SUBS = ["EnoughTrumpSpam", "The_Donald", "anime_irl", "anime", "Fitness", "de", "ShitAmericansSay", "pokemontrades", "changemyview", "unixporn", "starwarsrebels", "the_meltdown", "SubredditDrama", "AnimalsBeingJerks", "SeattleWA", "CatholicPolitics", "NASCAR", "DeepIntoYouTube"]
 
 def get_links(message):
     matches = LINK_PARSER.findall(message.body)

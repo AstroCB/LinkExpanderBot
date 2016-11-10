@@ -1,0 +1,12 @@
+AutoModerator
+SnapshillBot
+Roboragi
+hearthscan-bot
+TwitterToStreamable
+DeltaBot
+CrootBot
+yankbot
+BitcoinAllBot
+Reply-Dota-2-Reddit
+dEnissay
+DeepIntoYouTubeStats
