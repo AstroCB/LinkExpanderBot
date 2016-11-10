@@ -20,3 +20,6 @@ poker
 Animesuggest
 custommagic
 giftcardexchange
+CFBOffTopic
+LearnJapanese
+redditgetsdrawn
