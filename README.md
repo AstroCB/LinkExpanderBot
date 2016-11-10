@@ -22,3 +22,14 @@ USERAGENT="MyBot 1.0.0"
 ```
 
 Then, just run `bot.py` through a Python 3 interpreter and you're good to go.
+
+## Blacklist
+Not everyone is a fan of our dear LinkExpanderBot. As a result, it has been banned from a few subreddits and a few users have requested that their comments not be subject to its scrutiny. As a result, I've included a blacklist to prevent it from posting in certain subs and responding to certain users.
+
+The files are pretty self-explanatory; each line of `sub_blacklist.txt` and `user_blacklist.txt` represent an individual blacklisted sub and user respectively. Add to the blacklist as necessary by simply adding lines to these files. The bot will recompile its blacklist database each time you run it, and it will not post in blacklisted subs or respond to blacklisted users.
+
+I've preloaded the sub blacklist with the subs that [the official LinkExpanderBot](https://reddit.com/user/LinkExpanderBot) is currently banned from and the user blacklist with a few bots that tend to have short links in their posts (we don't want to start any bot wars here).
+
+If you're using this bot for some other purpose where you think it would be welcome in these communities and/or by these users, feel free to purge the lists and start anew.
+
+The code could also be easily modified to use a whitelist if that's more of what you're looking for.
