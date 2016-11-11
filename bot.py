@@ -52,6 +52,8 @@ def main():
                 time.sleep(error.sleep_time) # Delay to prevent ratelimiting
             except ConnectionError as error:
                 print("HTTP connection error: ", error)
+            except ConnectionResetError as error:
+                print("Connection reset: ", error)
             except Exception as other_error:
                 print(other_error)
 main()
