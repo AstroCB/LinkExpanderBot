@@ -6,7 +6,7 @@ from blacklist import *
 try:
     from credentials import * # Python file containing USERNAME, PASSWORD, and USERAGENT config variables
 except ImportError:
-    print("Credentials file not available. You need to include a credentials.py file in the root directory. See README.");
+    print("Credentials file not available. You need to include a credentials.py file in the root directory. See README.")
 
 LINK_PARSER = re.compile(r"\[([^\]]+)\]\(([^\)]+)\)", re.I) # Extract Markdown links
 POST_LENGTH = 3 # Max length of expansion
