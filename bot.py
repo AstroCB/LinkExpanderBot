@@ -9,7 +9,7 @@ except ImportError:
     print("Credentials file not available. You need to include a credentials.py file in the root directory. See README.")
 
 LINK_PARSER = re.compile(r"\[([^\]]+)\]\(([^\)]+)\)", re.I) # Extract Markdown links
-POST_LENGTH = 3 # Max length of expansion
+POST_LENGTH = 3 # 1 + desired max length of expansion
 
 def get_links(message):
     matches = LINK_PARSER.findall(message.body)
