@@ -39,3 +39,8 @@ sysadmin
 nfl
 RPGStuck_C4
 Battleborn
+LetsTalkMusic
+MechanicalKeyboards
+RWBY
+Kappa
+DanganRoleplay
