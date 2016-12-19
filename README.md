@@ -7,7 +7,7 @@ LinkExpanderBot is a [Reddit](https://reddit.com/) bot designed to help mobile u
 
 ## Configuration
 
-If you'd like to fork/clone this bot, you'll have to set up a configuration file with the necessary data required for accessing read/write features of the API.
+If you'd like to fork/clone this bot, you'll have to set up a configuration file with the requisite information for accessing read/write features of the API.
 
 You'll need to create a Reddit account for your bot (or simply use your existing account). Once you have the username/password for the account you'd like the bot to post under, create a file in the root directory called `credentials.py`.
 
