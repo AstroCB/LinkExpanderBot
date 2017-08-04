@@ -8,34 +8,28 @@ try:
 except ImportError:
     print("Credentials file not available. You need to include a credentials.py file in the root directory. See README.")
 
+# Configuration
 LINK_PARSER = re.compile(r"\[([^\]]+)\]\(([^\)]+)\)", re.I) # Extract Markdown links
-POST_LENGTH = 3 # 1 + desired max length of expansion
+POST_LENGTH = 2 # Max length of link to expand
 
 def get_links(message):
     matches = LINK_PARSER.findall(message.body)
     return (matches if matches else [])
 def get_message(links):
     if len(links) == 1:
-        l = links[0]
-        return "[I've expanded that {} character link for you.]({})".format(len(l[0]), l[1])
+        text, url = links[0]
+        return "[I've expanded that {} character link for you.]({})".format(len(text), url)
     else:
         m = "I've expanded some links for you."
-        for l in links:
-            length = len(l[0])
+        for text, url in links:
+            length = len(text)
             qualifier = "character" if length == 1 else "characters"
-            m += "\n\n**{}**: [Link expanded from {} {}]({})".format(l[0], length, qualifier, l[1])
+            m += "\n\n**{}**: [Link expanded from {} {}]({})".format(text, length, qualifier, url)
         return m
 def parse(message):
-    messages = []
     links = get_links(message)
-    for link in links:
-        text = link[0]
-        url = link[1]
-        if len(text) < POST_LENGTH: # Considered short link
-            messages.append(link)
-    if len(messages) > 0:
-        return get_message(messages)
-    return None
+    messages = [link for text, url in links if len(text) <= POST_LENGTH] # List of links considered short
+    return get_message(messages) if len(messages) > 0 else None
 
 def main():
     r = praw.Reddit(USERAGENT)
